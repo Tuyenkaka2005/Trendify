@@ -1,0 +1,236 @@
+:root {
+  --primary-bg: #000;
+  --secondary-bg: #121212;
+  --text-color: #fff;
+  --accent-color: #fe2c55;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: "Arial", sans-serif;
+  overscroll-behavior-y: contain;
+  overflow: hidden;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  background-color: var(--primary-bg);
+}
+
+.full-screen-feed {
+  height: calc(100vh - 60px);
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#current-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.video-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.video-description,
+.challenge-tag {
+  color: #fff;
+  margin-top: 5px;
+}
+
+.challenge-tag {
+  background-color: var(--accent-color);
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  display: inline-block;
+}
+
+.video-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-btn i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.action-btn .count {
+  font-size: 12px;
+}
+
+#bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: var(--primary-bg);
+  padding: 10px 0;
+  border-top: 1px solid #333;
+}
+
+.nav-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-btn i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.create-challenge-btn i {
+  color: var(--accent-color);
+  font-size: 28px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  background-color: var(--secondary-bg);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.upload-section {
+  text-align: center;
+  padding: 20px;
+  border: 2px dashed #444;
+  border-radius: 10px;
+}
+
+.upload-btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#video-upload {
+  display: none;
+}
+
+.challenge-details input,
+.challenge-details textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #222;
+  border: 1px solid #444;
+  color: white;
+}
+
+.effects-section {
+  margin: 20px 0;
+}
+
+.effect-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.effect-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#publish-challenge {
+  width: 100%;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
