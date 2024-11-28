@@ -16,6 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("userName", userName);
 
     // Redirect to the main interface
-    window.location.href = "index.html";
+    window.location.href = "home.html";
   });
 });
