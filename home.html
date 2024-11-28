@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trendify - TikTok-Style Challenges</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div id="video-feed" class="full-screen-feed">
+        <div class="video-container active">
+          <video id="current-video" src="" playsinline loop>
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="video-overlay">
+            <div class="video-info">
+              <img
+                src="/api/placeholder/40/40"
+                alt="User Avatar"
+                class="user-avatar"
+              />
+              <div class="user-details">
+                <h3 class="username">@challenge_creator</h3>
+                <p class="video-description">
+                  Epic dance challenge! Can you beat this?
+                </p>
+                <div class="challenge-tag">#DanceChallenge</div>
+              </div>
+            </div>
+
+            <div class="video-actions">
+              <button class="action-btn like-btn">
+                <i class="fas fa-heart"></i>
+                <span class="count">1.2K</span>
+              </button>
+              <button class="action-btn comment-btn">
+                <i class="fas fa-comment"></i>
+                <span class="count">456</span>
+              </button>
+              <button class="action-btn share-btn">
+                <i class="fas fa-share"></i>
+                <span class="count">789</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom-navigation">
+        <button class="nav-btn" data-section="home">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </button>
+        <button class="nav-btn" data-section="discover">
+          <i class="fas fa-search"></i>
+          <span>Discover</span>
+        </button>
+        <button class="nav-btn create-challenge-btn">
+          <i class="fas fa-plus-circle"></i>
+          <span>Create</span>
+        </button>
+        <button class="nav-btn" data-section="inbox">
+          <i class="fas fa-inbox"></i>
+          <span>Inbox</span>
+        </button>
+        <button class="nav-btn" data-section="profile">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </button>
+      </div>
+
+      <div id="create-challenge-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Create Challenge</h2>
+          <div class="upload-section">
+            <input
+              type="file"
+              id="video-upload"
+              accept="video/*"
+              capture="environment"
+            />
+            <label for="video-upload" class="upload-btn">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Upload Video</span>
+            </label>
+          </div>
+          <div class="challenge-details">
+            <input
+              type="text"
+              placeholder="Challenge Title"
+              id="challenge-title"
+            />
+            <textarea
+              placeholder="Description"
+              id="challenge-description"
+            ></textarea>
+            <input
+              type="text"
+              placeholder="#HashtagChallenge"
+              id="challenge-hashtag"
+            />
+
+            <div class="effects-section">
+              <h3>Add Effects</h3>
+              <div class="effect-buttons">
+                <button class="effect-btn">Filters</button>
+                <button class="effect-btn">Music</button>
+                <button class="effect-btn">Speed</button>
+              </div>
+            </div>
+
+            <button id="publish-challenge">Publish Challenge</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
